@@ -47,6 +47,8 @@ exports.convertLoan = (loanId) =>
             .then(loan => {
                 loanTemp = loan;
                 return host.findById(loan.hostId)
+                console.log('loanTemp.amount',loanTemp.amount)
+                console.log('loanTemp.called',loanTemp.called)
             })
             .then(host => {
                 var result = {
