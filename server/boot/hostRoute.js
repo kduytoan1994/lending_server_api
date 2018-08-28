@@ -228,4 +228,15 @@ module.exports = (app) => {
         console.log("response", response)
         res.json(response)
     })
+
+    app.post('/gethost', (req,res)=>{
+        var email = req.body.email;
+        host.findOne({where : {email : email}})
+        .then(hostResult => {
+            res.json(hostResult)
+        })
+        .catch(err=>{
+            res.json(err)
+        })
+    })
 }
