@@ -154,7 +154,7 @@ module.exports = (app) => {
                             investor_date_lend: time
                         }
                         console.log('payload ', payLoad)
-                        var html = swig.renderFile('../lending_server_test_1-master/server/mailTemplate/register_lend_success.ejs', payLoad);
+                        var html = swig.renderFile('../lending_server/lending_server_api/server/mailTemplate/register_lend_success.ejs', payLoad);
                         lend.sendEmail("toan.kd@samsung.com", html, "register lend success");
                         var data;
                         if (isFull == true) {
