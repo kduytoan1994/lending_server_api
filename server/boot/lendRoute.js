@@ -11,6 +11,7 @@ module.exports = (app) => {
     const constant = require('../constant')
     const investor = app.models.investor;
     const wallet = app.models.wallet;
+    const path = require('path');
     const AccessToken = app.models.AccessToken;
     const swig = require('swig');
 
@@ -159,7 +160,7 @@ module.exports = (app) => {
                             investor_date_lend: time
                         }
                         console.log('payload ', payLoad)
-                        var html = swig.renderFile('../lending_server/lending_server_api/server/mailTemplate/register_lend_success.ejs', payLoad);
+                        var html = swig.renderFile(path.join(__dirname,'..', 'mailTemplate','register_lend_success.ejs'), payLoad);
                         lend.sendEmail(investorTemp.email, html, "register lend success");
                         var data;
                         if (isFull == true) {
