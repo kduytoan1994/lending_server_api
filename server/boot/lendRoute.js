@@ -33,6 +33,7 @@ module.exports = (app) => {
                 console.log('listPackage[0]', listPackage)
                 for (var i = 0; i < listPackage.length; i++) {
                     console.log(listPackage[i])
+                    // danh dau package
                     promises.push(pack.findById(listPackage[i])
                         .then(pack => {
                             total += pack.amount;
@@ -57,6 +58,7 @@ module.exports = (app) => {
                         return loan.findOne({ where: { id: idLoan } })
                     })
                     .then(loan => {
+                        //thay doi call
                         loan.called += total;
                         //gọi đủ vốn , chuyển loan status =1 
                         if (loan.called == loan.amount) {
@@ -66,6 +68,7 @@ module.exports = (app) => {
                         return loan.save();
                     })
                     .then(loan => {
+                        //tao len
                         console.log("token.userId :", token)
                         loanTemp = loan;
                         var statusLend = 0;
@@ -87,6 +90,7 @@ module.exports = (app) => {
                         return investor.findById(lend.investorId);
                     })
                     .then(investor => {
+                        //chuyen tien cho system
                         console.log('investorID...', investor.id);
                         investorTemp = investor;
                         // console.log('investorID...',investor.id);
@@ -108,7 +112,7 @@ module.exports = (app) => {
                         } else {
                             rate = 15
                         }
-
+                        //tao cac interest
                         let promisesInterest = [];
                         var range_time = loanTemp.range_time;
                         for (var j = 1; j <= range_time; j++) {
@@ -140,6 +144,7 @@ module.exports = (app) => {
                         return host.findById(loanTemp.hostId);
                     })
                     .then(hostResult => {
+                        //gui mail
                         var time = new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()
                         var callpercent = ((loanTemp.called/loanTemp.amount)*100).toFixed(2)
                         var payLoad = {
@@ -155,9 +160,10 @@ module.exports = (app) => {
                         }
                         console.log('payload ', payLoad)
                         var html = swig.renderFile('../lending_server/lending_server_api/server/mailTemplate/register_lend_success.ejs', payLoad);
-                        lend.sendEmail("toan.kd@samsung.com", html, "register lend success");
+                        lend.sendEmail(investorTemp.email, html, "register lend success");
                         var data;
                         if (isFull == true) {
+                            //check update if loan full
                             util.updateFullLoan(loanTemp.id)
                                 .then(result => {
                                     console.log('123fdfds', lendTemp)
