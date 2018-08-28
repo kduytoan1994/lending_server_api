@@ -1,0 +1,100 @@
+{
+  "name": "loan",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "typeHome": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "String",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "descriptions": {
+      "type": "string",
+      "required": true
+    },
+    "photos": {
+      "type": [
+        "string"
+      ],
+      "required": false
+    },
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "called": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "number",
+      "required": true
+    },
+    "start_time": {
+      "type": "string",
+      "required": true
+    },
+    "end_time": {
+      "type": "string",
+      "required": false
+    },
+    "range_time": {
+      "type": "number",
+      "required": true
+    },
+    "interest": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "host": {
+      "type": "belongsTo",
+      "model": "host",
+      "foreignKey": "hostId"
+    },
+    "packs": {
+      "type": "hasMany",
+      "model": "pack",
+      "foreignKey": "loanId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,33 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "my_db": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "lending_v9",
+    "password": "",
+    "name": "my_db",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "myEmailDatasource": {
+    "name": "myEmailDatasource",
+    "connector": "mail",
+    "transports": [{
+      "type": "smtp",
+      "host": "smtp.gmail.com",
+      "secure": true,
+      "port": 465,
+      "tls": {
+        "rejectUnauthorized": false
+      },
+      "auth": {
+        "user": "asio.lending@gmail.com",
+        "pass": "asio@2018"
+      }
+    }]
+  }
+}

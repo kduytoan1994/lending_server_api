@@ -1,0 +1,22 @@
+{
+  "name": "interest_money",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "money": {
+      "type": "number",
+      "required": true
+    },
+    "interest": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

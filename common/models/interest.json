@@ -1,0 +1,40 @@
+{
+  "name": "interest",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "money": {
+      "type": "number",
+      "required": true
+    },
+    "rate": {
+      "type": "number",
+      "required": true
+    },
+    "order": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "number",
+      "require": true
+    },
+    "date": {
+      "type": "string",
+      "require": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "loan": {
+      "type": "belongsTo",
+      "model": "loan",
+      "foreignKey": "loanId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

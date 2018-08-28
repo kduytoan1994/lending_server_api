@@ -1,0 +1,82 @@
+{
+  "name": "lending",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "start_time": {
+      "type": "string",
+      "required": true
+    },
+    "end_time": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "number",
+      "require": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "investor": {
+      "type": "belongsTo",
+      "model": "investor",
+      "foreignKey": "investorId"
+    },
+    "loan": {
+      "type": "belongsTo",
+      "model": "loan",
+      "foreignKey": "loanId"
+    },
+    "packs": {
+      "type": "hasMany",
+      "model": "pack",
+      "foreignKey": "lendingId"
+    },
+    "lendingId": {
+      "type": "hasMany",
+      "model": "interest",
+      "foreignKey": "lendingId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

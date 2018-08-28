@@ -1,0 +1,28 @@
+{
+  "name": "pack",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "loan": {
+      "type": "belongsTo",
+      "model": "loan",
+      "foreignKey": "loanId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

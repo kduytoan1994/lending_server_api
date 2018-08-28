@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Asio lending Email</title>
+    <style>
+      * {
+        font-family:  Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="width: 90%; height: 42px; margin: 0 auto">
+      <img style="float:left; height: 100%; width: auto;" src="http://localhost:3000/img/icon/home-logo.png">
+      <div style="float:right; height:100%; width: calc(100% - 45px);">
+        <span style="color: #0da8e9; font-weight: bold; font-size: 20px">Asio-Lending</span> <br>
+        <span style="color: #0da8e9; font-size: 15px;">Lending Platform for Asio system</span>
+      </div>
+    </div>
+
+    <hr style="border: 0.5px dotted black; padding: 0px; width: 90%; margin: 25px auto 25px;">
+
+    <div style="width: 90%; height: auto; margin: 0 auto">
+      <div style="font-weight: bold; font-size: 23px; color: #0da8e9; ">
+        Register lending successful
+      </div>
+
+      <div style="margin-top: 40px; ">
+        <div style="font-weight: bold; font-size: 16px; color: black; text-transform: uppercase">
+          Loan detail
+        </div>
+  
+        <table style="margin-top: 5px; border: 0px">
+          <tbody>
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Homestay name:
+              </td>
+    
+              <td style="width: 60%; font-weight: bold">
+                {{loan_name}}
+              </td>
+            </tr>
+  
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Host name:
+              </td>
+    
+              <td style="font-weight: bold">
+                {{loan_host_name}}
+              </td>
+            </tr>
+  
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Total loan money:
+              </td>
+    
+              <td style="font-weight: bold">
+                {{loan_money}}
+              </td>
+            </tr>
+  
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Due date:
+              </td>
+    
+              <td style="font-weight: bold">
+                {{loan_due_date}}
+              </td>
+            </tr>
+
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Range time:
+              </td>
+    
+              <td style="font-weight: bold">
+                {{loan_range_time}} months
+              </td>
+            </tr>
+
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Called percent:
+              </td>
+    
+              <td style="font-weight: bold">
+                {{loan_called}} %
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 40px; ">
+        <div style="font-weight: bold; font-size: 16px; color: black; text-transform: uppercase">
+          Lending detail
+        </div>
+  
+        <table style="margin-top: 5px; border: 0px">
+          <tbody>
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Investor name:
+              </td>
+    
+              <td style="width: 60%; font-weight: bold">
+                {{investor_name}}
+              </td>
+            </tr>
+  
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Total lend money:
+              </td>
+    
+              <td style="font-weight: bold">
+                {{investor_lend_money}}
+              </td>
+            </tr>
+  
+            <tr style="height: 35px;">
+              <td style="width: 40%; padding-right: 20px">
+                Transaction date:
+              </td>
+    
+              <td style="font-weight: bold">
+                {{investor_date_lend}}
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr style="border: 0.5px dotted black; padding: 0px; width: 90%; margin: 25px auto 25px;">
+
+    <div style="width: 90%; height: auto; margin: 0 auto">
+      <span style="font-weight: bold; color: black; font-size: 20px">
+        Thank you for using our service.
+      </span>
+      <br>
+      <img style="float:left; height: 50px; width: auto;" src="http://localhost:3000/img/icon/home-logo-name.png">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "withdraw",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "money": {
+      "type": "number",
+      "required": true
+    },
+    "name_bank": {
+      "type": "string",
+      "required": true
+    },
+    "bank_branch": {
+      "type": "string",
+      "required": true
+    },
+    "account_number": {
+      "type": "string",
+      "required": true
+    },
+    "name_receiver": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

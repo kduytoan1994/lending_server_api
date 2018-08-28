@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "my_db"
+  },
+  "AccessToken": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "ACL": {
+    "dataSource": "my_db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "my_db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "my_db",
+    "public": false
+  },
+  "Email" :{
+    "dataSource" : "myEmailDatasource",
+    "public" : false
+  },
+  "account": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "agency": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "investor": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "host": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "wallet": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "loan": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "lending": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "pack": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "transaction": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "interest": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "interest_money": {
+    "dataSource": "my_db",
+    "public": true
+  },
+  "withdraw": {
+    "dataSource": "my_db",
+    "public": true
+  }
+}
