@@ -179,8 +179,8 @@ var exchangeMoneyWithoutToken = (receiveId, sendId, amount) =>
                     var addSub = amount * 1000000;
                     var balanceReceive = receiveWallet.balance * 1000000;
 
-                    sendWallet.balance -= parseFloat(((balanceSend - addSub) / 1000000).toFixed(2));
-                    receiveWallet.balance += parseFloat(((balanceReceive + addSub) / 1000000).toFixed(2));
+                    sendWallet.balance = parseFloat(((balanceSend - addSub) / 1000000).toFixed(2));
+                    receiveWallet.balance = parseFloat(((balanceReceive + addSub) / 1000000).toFixed(2));
                     sendWallet.save(err => {
                         if (err) {
                             reject(err)
@@ -217,8 +217,8 @@ exports.chageMoney = (sendId, receiveId, amount) =>
                     var addSub = amount * 1000000;
                     var balanceReceive = receiveWallet.balance * 1000000;
 
-                    sendWallet.balance -= parseFloat(((balanceSend - addSub) / 1000000).toFixed(2));
-                    receiveWallet.balance += parseFloat(((balanceReceive + addSub) / 1000000).toFixed(2));
+                    sendWallet.balance = parseFloat(((balanceSend - addSub) / 1000000).toFixed(2));
+                    receiveWallet.balance = parseFloat(((balanceReceive + addSub) / 1000000).toFixed(2));
                     sendWallet.save(err => {
                         if (err) {
                             console.log('send errorr')
